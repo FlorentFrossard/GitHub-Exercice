@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+
+class User: Identifiable {
+    var id = UUID()
+}
