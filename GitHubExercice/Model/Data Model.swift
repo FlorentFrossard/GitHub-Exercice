@@ -8,6 +8,6 @@
 import Foundation
 
 
-class User: Identifiable {
+struct User: Identifiable {
     var id = UUID()
 }
