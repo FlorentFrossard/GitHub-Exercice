@@ -34,6 +34,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C6DBE032AE265CB00F5C141 /* APP */ = {
+			isa = PBXGroup;
+			children = (
+				52CA44622AD5831900CF404B /* GitHubExerciceApp.swift */,
+			);
+			path = APP;
+			sourceTree = "<group>";
+		};
+		3C6DBE042AE265D800F5C141 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				52CA44642AD5831900CF404B /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3C6DBE052AE265E200F5C141 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3CE037912ADE8D4800D5621A /* Data Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3C6DBE072AE2660000F5C141 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3C6DBE082AE2661A00F5C141 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		52CA44562AD5831900CF404B = {
 			isa = PBXGroup;
 			children = (
@@ -53,9 +91,11 @@
 		52CA44612AD5831900CF404B /* GitHubExercice */ = {
 			isa = PBXGroup;
 			children = (
-				52CA44622AD5831900CF404B /* GitHubExerciceApp.swift */,
-				52CA44642AD5831900CF404B /* ContentView.swift */,
-				3CE037912ADE8D4800D5621A /* Data Model.swift */,
+				3C6DBE032AE265CB00F5C141 /* APP */,
+				3C6DBE042AE265D800F5C141 /* Views */,
+				3C6DBE052AE265E200F5C141 /* Model */,
+				3C6DBE072AE2660000F5C141 /* ViewModel */,
+				3C6DBE082AE2661A00F5C141 /* Helpers */,
 				52CA44662AD5831B00CF404B /* Assets.xcassets */,
 				52CA44682AD5831B00CF404B /* Preview Content */,
 			);
