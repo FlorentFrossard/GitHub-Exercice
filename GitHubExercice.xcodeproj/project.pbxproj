@@ -10,7 +10,6 @@
 		3C6DBE0A2AE2686C00F5C141 /* OptionalValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DBE092AE2686C00F5C141 /* OptionalValues.swift */; };
 		3C6DBE292AE2ACAC00F5C141 /* OptionalValuesIfLet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DBE282AE2ACAC00F5C141 /* OptionalValuesIfLet.swift */; };
 		3C6DBE2B2AE2AF0A00F5C141 /* OptionalValuesGuardLet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DBE2A2AE2AF0A00F5C141 /* OptionalValuesGuardLet.swift */; };
-		3CE037922ADE8D4800D5621A /* Data Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE037912ADE8D4800D5621A /* Data Model.swift */; };
 		5274EEBB2AE7EA36001C86E5 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274EEBA2AE7EA36001C86E5 /* LocationManager.swift */; };
 		5274EEBE2AE7ED5F001C86E5 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274EEBD2AE7ED5F001C86E5 /* MapView.swift */; };
 		52CA44632AD5831900CF404B /* GitHubExerciceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CA44622AD5831900CF404B /* GitHubExerciceApp.swift */; };
@@ -23,7 +22,6 @@
 		3C6DBE092AE2686C00F5C141 /* OptionalValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalValues.swift; sourceTree = "<group>"; };
 		3C6DBE282AE2ACAC00F5C141 /* OptionalValuesIfLet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalValuesIfLet.swift; sourceTree = "<group>"; };
 		3C6DBE2A2AE2AF0A00F5C141 /* OptionalValuesGuardLet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalValuesGuardLet.swift; sourceTree = "<group>"; };
-		3CE037912ADE8D4800D5621A /* Data Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data Model.swift"; sourceTree = "<group>"; };
 		5274EEBA2AE7EA36001C86E5 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		5274EEBD2AE7ED5F001C86E5 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		52CA445F2AD5831900CF404B /* GitHubExercice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubExercice.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,7 +63,6 @@
 		3C6DBE052AE265E200F5C141 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3CE037912ADE8D4800D5621A /* Data Model.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -201,7 +198,6 @@
 				52CA44632AD5831900CF404B /* GitHubExerciceApp.swift in Sources */,
 				5274EEBB2AE7EA36001C86E5 /* LocationManager.swift in Sources */,
 				3C6DBE2B2AE2AF0A00F5C141 /* OptionalValuesGuardLet.swift in Sources */,
-				3CE037922ADE8D4800D5621A /* Data Model.swift in Sources */,
 				3C6DBE292AE2ACAC00F5C141 /* OptionalValuesIfLet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
