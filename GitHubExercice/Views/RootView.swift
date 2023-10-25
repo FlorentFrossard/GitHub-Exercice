@@ -13,14 +13,15 @@ struct RootView: View {
     
     var body: some View {
         TabView {
+            MapView()
+                .tabItem {
+                    Label("Map", systemImage: "map.fill")
+                }
             UserListView()
                 .tabItem {
-                    Label("Connexions", systemImage: "person.2")
+                    Label("Connexions", systemImage: "person.3.fill")
                 }
-            Color.red
-                .tabItem {
-                    Label("Toto", systemImage: "person")
-                }
+            
         }
         .onAppear {
             Task {
