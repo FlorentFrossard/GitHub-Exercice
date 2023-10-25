@@ -1,6 +1,6 @@
 # GitHub-Exercice
 
-~~ 🇫🇷 FRANÇAIS 🇫🇷 ~~  </br> </br>
+## 🇫🇷 FRANÇAIS 🇫🇷  </br> </br>
 **COMPILATION D'EXEMPLES POUR SWIFTUI** </br> </br>
 Vous allez pouvoir y retrouver une mise en place de MapKit, des pulls API en provenance de Airtable, des objets d'environnement et plus encore.  </br>
 Pour Airtable: vous ne pouvez pas utiliser le code tel quel car l'URL et vos données vont changer en fonction de votre base Airtable.  </br>
@@ -26,7 +26,7 @@ Effectuer ces actions corrige l'erreur entrainé par le fichier manquant. </br> 
 
 
 
-##~~ 🇺🇸 ENGLISH 🇺🇸 ~~ </br> </br>
+## 🇺🇸 ENGLISH 🇺🇸 ~~ </br> </br>
 **COMPILATION OF EXAMPLES FOR SWIFTUI** </br> </br>
 You can find MapKit installation, API pulls from Airtable, environment object and the like within. </br>
 For Airtable: you can't use the code as it is since you must modify the URL and the data depending on your Airtable base.  </br>
