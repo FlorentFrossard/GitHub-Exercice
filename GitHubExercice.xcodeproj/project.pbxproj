@@ -14,8 +14,8 @@
 		3C6DBE292AE2ACAC00F5C141 /* OptionalValuesIfLet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DBE282AE2ACAC00F5C141 /* OptionalValuesIfLet.swift */; };
 		3C6DBE2B2AE2AF0A00F5C141 /* OptionalValuesGuardLet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DBE2A2AE2AF0A00F5C141 /* OptionalValuesGuardLet.swift */; };
 		3C954E962AE9787F009EE498 /* APIRequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C954E952AE9787F009EE498 /* APIRequestViewModel.swift */; };
+		3C954E9A2AE97C78009EE498 /* DrinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C954E992AE97C78009EE498 /* DrinkModel.swift */; };
 		3CFF02672AE96E92006ADD77 /* local.env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFF02662AE96E92006ADD77 /* local.env.swift */; };
-		3CFF026B2AE96EE5006ADD77 /* DrinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFF02682AE96EE4006ADD77 /* DrinkModel.swift */; };
 		3CFF02752AE96F3A006ADD77 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFF02742AE96F3A006ADD77 /* RootView.swift */; };
 		5274EEBB2AE7EA36001C86E5 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274EEBA2AE7EA36001C86E5 /* LocationManager.swift */; };
 		5274EEBE2AE7ED5F001C86E5 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274EEBD2AE7ED5F001C86E5 /* MapView.swift */; };
@@ -33,8 +33,8 @@
 		3C6DBE282AE2ACAC00F5C141 /* OptionalValuesIfLet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalValuesIfLet.swift; sourceTree = "<group>"; };
 		3C6DBE2A2AE2AF0A00F5C141 /* OptionalValuesGuardLet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalValuesGuardLet.swift; sourceTree = "<group>"; };
 		3C954E952AE9787F009EE498 /* APIRequestViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestViewModel.swift; sourceTree = "<group>"; };
+		3C954E992AE97C78009EE498 /* DrinkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkModel.swift; sourceTree = "<group>"; };
 		3CFF02662AE96E92006ADD77 /* local.env.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = local.env.swift; sourceTree = "<group>"; };
-		3CFF02682AE96EE4006ADD77 /* DrinkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DrinkModel.swift; path = ../../../DrinkModel.swift; sourceTree = "<group>"; };
 		3CFF02742AE96F3A006ADD77 /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootView.swift; path = ../Views/RootView.swift; sourceTree = "<group>"; };
 		5274EEBA2AE7EA36001C86E5 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		5274EEBD2AE7ED5F001C86E5 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				3C27FB7D2AE9764F005C865F /* ImageModel.swift */,
-				3CFF02682AE96EE4006ADD77 /* DrinkModel.swift */,
+				3C954E992AE97C78009EE498 /* DrinkModel.swift */,
 				3C27FB7F2AE976B5005C865F /* UserModel.swift */,
 			);
 			path = Model;
@@ -230,6 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C954E9A2AE97C78009EE498 /* DrinkModel.swift in Sources */,
 				52CA44652AD5831900CF404B /* ContentView.swift in Sources */,
 				5274EEBE2AE7ED5F001C86E5 /* MapView.swift in Sources */,
 				3CFF02752AE96F3A006ADD77 /* RootView.swift in Sources */,
@@ -242,7 +243,6 @@
 				3C27FB802AE976B5005C865F /* UserModel.swift in Sources */,
 				3C6DBE2B2AE2AF0A00F5C141 /* OptionalValuesGuardLet.swift in Sources */,
 				3C6DBE292AE2ACAC00F5C141 /* OptionalValuesIfLet.swift in Sources */,
-				3CFF026B2AE96EE5006ADD77 /* DrinkModel.swift in Sources */,
 				3C27FB7E2AE9764F005C865F /* ImageModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
