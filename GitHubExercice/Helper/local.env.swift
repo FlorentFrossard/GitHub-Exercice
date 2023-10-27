@@ -7,4 +7,4 @@
 
 import Foundation
 
-let apiKey = "VOTRE_TOKEN_AIRTABLE_ICI"
+let apiKey = "VOTRE API TOKEN ICI"

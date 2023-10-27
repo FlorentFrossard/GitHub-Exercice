@@ -28,7 +28,7 @@ struct UserRecord: Codable {
 
 // MARK: - USER 
 //oubliez pas de rendre votre donnée finale (celle que vous voulez utiliser et travailler) Identifiable pour SwiftUI
-struct User: Codable, Identifiable {
+class User: Codable, Identifiable {
     let name, status, id, notes: String
     //si vous utilisez des attachements sur Airtable toutes vos images vont venir de la même manière
     //donc on utilise un type global d'image, ici DataBaseImage que ce soit utiliser partout et éviter d'avoir 3-4 structures d'images différentes

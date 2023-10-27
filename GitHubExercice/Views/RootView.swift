@@ -10,6 +10,7 @@ import SwiftUI
 struct RootView: View {
     
     @StateObject var userRequest = UserAPIRequest()
+    @StateObject var drinkRequest = DrinkAPIRequestViewModel()
     
     var body: some View {
         TabView {
@@ -21,14 +22,20 @@ struct RootView: View {
                 .tabItem {
                     Label("Connexions", systemImage: "person.3.fill")
                 }
+            DrinkListView()
+                .tabItem {
+                    Label("Selections", systemImage: "mug.fill")
+                }
             
         }
         .onAppear {
             Task {
                 userRequest.allUser = await userRequest.fetchedUser()
+                drinkRequest.allDrink = await drinkRequest.fetchedDrinks()
             }
         }
         .environmentObject(userRequest)
+        .environmentObject(drinkRequest)
         
         
     }

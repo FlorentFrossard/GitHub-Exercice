@@ -45,3 +45,17 @@ struct Drink: Codable, Identifiable {
         case user = "User"
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
