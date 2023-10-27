@@ -5,14 +5,31 @@
 //  Created by test on 27/10/2023.
 //
 
+
 import SwiftUI
 
-struct ConfettiView: View {
+struct ConffetiView: View {
+   
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+        ZStack {
+           Text("Ouaiiiss!")
+                .font(.largeTitle)
+                .bold()
+                .foregroundStyle(Gradient(colors: [Color.pink, Color.yellow]))
+            Rectangle()
+                .fill(.blue)
+                .frame(width: 8, height: 10)
+                .modifier(ParticleModifier())
+            Rectangle()
+                .fill(.red)
+                .frame(width: 8, height: 10)
+                .modifier(ParticleModifier())
+                .offset(x:60, y:70)
+                
+         }
+     }
 }
 
 #Preview {
-    ConfettiView()
+    ConffetiView()
 }

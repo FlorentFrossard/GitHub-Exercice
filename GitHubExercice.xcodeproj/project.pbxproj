@@ -21,6 +21,8 @@
 		3CFF02752AE96F3A006ADD77 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFF02742AE96F3A006ADD77 /* RootView.swift */; };
 		5274EEBB2AE7EA36001C86E5 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274EEBA2AE7EA36001C86E5 /* LocationManager.swift */; };
 		5274EEBE2AE7ED5F001C86E5 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274EEBD2AE7ED5F001C86E5 /* MapView.swift */; };
+		528D11362AEC00D9000B772F /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D11352AEC00D9000B772F /* ConfettiView.swift */; };
+		528D11382AEC0177000B772F /* ConfettiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D11372AEC0177000B772F /* ConfettiViewModel.swift */; };
 		52CA44632AD5831900CF404B /* GitHubExerciceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CA44622AD5831900CF404B /* GitHubExerciceApp.swift */; };
 		52CA44652AD5831900CF404B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CA44642AD5831900CF404B /* ContentView.swift */; };
 		52CA44672AD5831B00CF404B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CA44662AD5831B00CF404B /* Assets.xcassets */; };
@@ -42,6 +44,8 @@
 		3CFF02742AE96F3A006ADD77 /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootView.swift; path = ../Views/RootView.swift; sourceTree = "<group>"; };
 		5274EEBA2AE7EA36001C86E5 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		5274EEBD2AE7ED5F001C86E5 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		528D11352AEC00D9000B772F /* ConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
+		528D11372AEC0177000B772F /* ConfettiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiViewModel.swift; sourceTree = "<group>"; };
 		52CA445F2AD5831900CF404B /* GitHubExercice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubExercice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52CA44622AD5831900CF404B /* GitHubExerciceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubExerciceApp.swift; sourceTree = "<group>"; };
 		52CA44642AD5831900CF404B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -75,6 +79,7 @@
 				52CA44642AD5831900CF404B /* ContentView.swift */,
 				3C6DBE272AE2ABFD00F5C141 /* Optionals */,
 				5274EEBD2AE7ED5F001C86E5 /* MapView.swift */,
+				528D11352AEC00D9000B772F /* ConfettiView.swift */,
 				3CFF026E2AE96EFB006ADD77 /* API */,
 			);
 			path = Views;
@@ -114,6 +119,7 @@
 			children = (
 				3C954E952AE9787F009EE498 /* APIRequestViewModel.swift */,
 				3CA605B72AEBE78700DF48DD /* DrinkAPIRequestViewModel.swift */,
+				528D11372AEC0177000B772F /* ConfettiViewModel.swift */,
 			);
 			name = ViewModel;
 			path = Views;
@@ -242,8 +248,10 @@
 				3CFF02752AE96F3A006ADD77 /* RootView.swift in Sources */,
 				3C6DBE0A2AE2686C00F5C141 /* OptionalValues.swift in Sources */,
 				52CA44632AD5831900CF404B /* GitHubExerciceApp.swift in Sources */,
+				528D11382AEC0177000B772F /* ConfettiViewModel.swift in Sources */,
 				3CFF02672AE96E92006ADD77 /* local.env.swift in Sources */,
 				3C27FB842AE97718005C865F /* UserListView.swift in Sources */,
+				528D11362AEC00D9000B772F /* ConfettiView.swift in Sources */,
 				3C954E962AE9787F009EE498 /* APIRequestViewModel.swift in Sources */,
 				3CA605B82AEBE78700DF48DD /* DrinkAPIRequestViewModel.swift in Sources */,
 				5274EEBB2AE7EA36001C86E5 /* LocationManager.swift in Sources */,
