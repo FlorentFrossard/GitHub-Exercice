@@ -29,7 +29,8 @@ struct DrinkRecord: Codable {
 // MARK: - Fields
 //oubliez pas de rendre votre donnée finale (celle que vous voulez utiliser et travailler) Identifiable pour SwiftUI
 struct Drink: Codable, Identifiable {
-    let favorite, id: String
+    var favorite: Bool?
+    let id: String
     let price: Double
     let name: String
     //si vous utilisez des attachements sur Airtable toutes vos images vont venir de la même manière

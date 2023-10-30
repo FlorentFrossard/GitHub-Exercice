@@ -11,7 +11,7 @@ import CoreLocation
 
 class LocationManager: NSObject, ObservableObject {
     //Instance de CLLocationManager
-    //manager va nous permettre d'acceder à toutes les propriétés de CLLocationManager
+    //manager va nous permettre d'accéder à toutes les propriétés de CLLocationManager
     private let manager = CLLocationManager()
     
     //Va update notre vue(Map)

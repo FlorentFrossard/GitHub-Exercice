@@ -12,7 +12,7 @@ import Foundation
 //on fait une classe parce que elle seule peuvent être appliquée sur toute l'application!
 //avec le ObservableObject on indique qu'on va lire la même info partout
 //
-class UserAPIRequest: ObservableObject {
+class UserAPIRequestViewModel: ObservableObject {
     
     //on veut savoir les faits et gestes des @Published tel un stalker
     @Published var allUser = [User]()

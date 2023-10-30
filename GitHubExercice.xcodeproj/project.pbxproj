@@ -10,10 +10,12 @@
 		3C27FB7E2AE9764F005C865F /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C27FB7D2AE9764F005C865F /* ImageModel.swift */; };
 		3C27FB802AE976B5005C865F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C27FB7F2AE976B5005C865F /* UserModel.swift */; };
 		3C27FB842AE97718005C865F /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C27FB832AE97718005C865F /* UserListView.swift */; };
+		3C45F5C42AF028D3006B9129 /* DataControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C45F5C32AF028D3006B9129 /* DataControllerViewModel.swift */; };
+		3C45F5C62AF02A48006B9129 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C45F5C52AF02A48006B9129 /* ProfileView.swift */; };
 		3C6DBE0A2AE2686C00F5C141 /* OptionalValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DBE092AE2686C00F5C141 /* OptionalValues.swift */; };
 		3C6DBE292AE2ACAC00F5C141 /* OptionalValuesIfLet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DBE282AE2ACAC00F5C141 /* OptionalValuesIfLet.swift */; };
 		3C6DBE2B2AE2AF0A00F5C141 /* OptionalValuesGuardLet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DBE2A2AE2AF0A00F5C141 /* OptionalValuesGuardLet.swift */; };
-		3C954E962AE9787F009EE498 /* APIRequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C954E952AE9787F009EE498 /* APIRequestViewModel.swift */; };
+		3C954E962AE9787F009EE498 /* UserAPIRequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C954E952AE9787F009EE498 /* UserAPIRequestViewModel.swift */; };
 		3C954E9A2AE97C78009EE498 /* DrinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C954E992AE97C78009EE498 /* DrinkModel.swift */; };
 		3CA605B82AEBE78700DF48DD /* DrinkAPIRequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA605B72AEBE78700DF48DD /* DrinkAPIRequestViewModel.swift */; };
 		3CA605BA2AEBEB7A00DF48DD /* DrinkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA605B92AEBEB7A00DF48DD /* DrinkListView.swift */; };
@@ -33,10 +35,12 @@
 		3C27FB7D2AE9764F005C865F /* ImageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 		3C27FB7F2AE976B5005C865F /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		3C27FB832AE97718005C865F /* UserListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
+		3C45F5C32AF028D3006B9129 /* DataControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataControllerViewModel.swift; sourceTree = "<group>"; };
+		3C45F5C52AF02A48006B9129 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		3C6DBE092AE2686C00F5C141 /* OptionalValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalValues.swift; sourceTree = "<group>"; };
 		3C6DBE282AE2ACAC00F5C141 /* OptionalValuesIfLet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalValuesIfLet.swift; sourceTree = "<group>"; };
 		3C6DBE2A2AE2AF0A00F5C141 /* OptionalValuesGuardLet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalValuesGuardLet.swift; sourceTree = "<group>"; };
-		3C954E952AE9787F009EE498 /* APIRequestViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestViewModel.swift; sourceTree = "<group>"; };
+		3C954E952AE9787F009EE498 /* UserAPIRequestViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAPIRequestViewModel.swift; sourceTree = "<group>"; };
 		3C954E992AE97C78009EE498 /* DrinkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkModel.swift; sourceTree = "<group>"; };
 		3CA605B72AEBE78700DF48DD /* DrinkAPIRequestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkAPIRequestViewModel.swift; sourceTree = "<group>"; };
 		3CA605B92AEBEB7A00DF48DD /* DrinkListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkListView.swift; sourceTree = "<group>"; };
@@ -64,6 +68,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C45F5C72AF02A8A006B9129 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				5274EEBD2AE7ED5F001C86E5 /* MapView.swift */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		3C45F5C82AF02A94006B9129 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				528D11352AEC00D9000B772F /* ConfettiView.swift */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
 		3C6DBE032AE265CB00F5C141 /* APP */ = {
 			isa = PBXGroup;
 			children = (
@@ -78,9 +98,9 @@
 			children = (
 				52CA44642AD5831900CF404B /* ContentView.swift */,
 				3C6DBE272AE2ABFD00F5C141 /* Optionals */,
-				5274EEBD2AE7ED5F001C86E5 /* MapView.swift */,
-				528D11352AEC00D9000B772F /* ConfettiView.swift */,
-				3CFF026E2AE96EFB006ADD77 /* API */,
+				3C45F5C72AF02A8A006B9129 /* Map */,
+				3C45F5C82AF02A94006B9129 /* Animation */,
+				3CFF026E2AE96EFB006ADD77 /* APIAndClass */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -105,21 +125,23 @@
 			name = Optionals;
 			sourceTree = "<group>";
 		};
-		3CFF026E2AE96EFB006ADD77 /* API */ = {
+		3CFF026E2AE96EFB006ADD77 /* APIAndClass */ = {
 			isa = PBXGroup;
 			children = (
 				3C27FB832AE97718005C865F /* UserListView.swift */,
+				3C45F5C52AF02A48006B9129 /* ProfileView.swift */,
 				3CA605B92AEBEB7A00DF48DD /* DrinkListView.swift */,
 			);
-			name = API;
+			name = APIAndClass;
 			sourceTree = "<group>";
 		};
 		3CFF02712AE96F13006ADD77 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				3C954E952AE9787F009EE498 /* APIRequestViewModel.swift */,
+				3C954E952AE9787F009EE498 /* UserAPIRequestViewModel.swift */,
 				3CA605B72AEBE78700DF48DD /* DrinkAPIRequestViewModel.swift */,
 				528D11372AEC0177000B772F /* ConfettiViewModel.swift */,
+				3C45F5C32AF028D3006B9129 /* DataControllerViewModel.swift */,
 			);
 			name = ViewModel;
 			path = Views;
@@ -252,10 +274,12 @@
 				3CFF02672AE96E92006ADD77 /* local.env.swift in Sources */,
 				3C27FB842AE97718005C865F /* UserListView.swift in Sources */,
 				528D11362AEC00D9000B772F /* ConfettiView.swift in Sources */,
-				3C954E962AE9787F009EE498 /* APIRequestViewModel.swift in Sources */,
+				3C954E962AE9787F009EE498 /* UserAPIRequestViewModel.swift in Sources */,
 				3CA605B82AEBE78700DF48DD /* DrinkAPIRequestViewModel.swift in Sources */,
+				3C45F5C62AF02A48006B9129 /* ProfileView.swift in Sources */,
 				5274EEBB2AE7EA36001C86E5 /* LocationManager.swift in Sources */,
 				3C27FB802AE976B5005C865F /* UserModel.swift in Sources */,
+				3C45F5C42AF028D3006B9129 /* DataControllerViewModel.swift in Sources */,
 				3C6DBE2B2AE2AF0A00F5C141 /* OptionalValuesGuardLet.swift in Sources */,
 				3CA605BA2AEBEB7A00DF48DD /* DrinkListView.swift in Sources */,
 				3C6DBE292AE2ACAC00F5C141 /* OptionalValuesIfLet.swift in Sources */,
