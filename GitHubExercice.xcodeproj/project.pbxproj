@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C07C4CB2AF4061D00AFFFC8 /* CoreDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C07C4CA2AF4061D00AFFFC8 /* CoreDataContainer.swift */; };
+		3C07C4CE2AF4063B00AFFFC8 /* AppDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3C07C4CC2AF4063B00AFFFC8 /* AppDataModel.xcdatamodeld */; };
+		3C07C4D12AF4068E00AFFFC8 /* Favorite+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C07C4CF2AF4068E00AFFFC8 /* Favorite+CoreDataClass.swift */; };
+		3C07C4D22AF4068E00AFFFC8 /* Favorite+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C07C4D02AF4068E00AFFFC8 /* Favorite+CoreDataProperties.swift */; };
+		3C07C4D52AF4075C00AFFFC8 /* ProfileViewCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C07C4D42AF4075C00AFFFC8 /* ProfileViewCoreData.swift */; };
+		3C07C4D72AF407B200AFFFC8 /* DrinkListViewCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C07C4D62AF407B200AFFFC8 /* DrinkListViewCoreData.swift */; };
+		3C07C4D92AF407CF00AFFFC8 /* DrinkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C07C4D82AF407CF00AFFFC8 /* DrinkDetailView.swift */; };
 		3C27FB7E2AE9764F005C865F /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C27FB7D2AE9764F005C865F /* ImageModel.swift */; };
 		3C27FB802AE976B5005C865F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C27FB7F2AE976B5005C865F /* UserModel.swift */; };
 		3C27FB842AE97718005C865F /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C27FB832AE97718005C865F /* UserListView.swift */; };
@@ -32,6 +39,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C07C4CA2AF4061D00AFFFC8 /* CoreDataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataContainer.swift; sourceTree = "<group>"; };
+		3C07C4CD2AF4063B00AFFFC8 /* AppDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AppDataModel.xcdatamodel; sourceTree = "<group>"; };
+		3C07C4CF2AF4068E00AFFFC8 /* Favorite+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorite+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		3C07C4D02AF4068E00AFFFC8 /* Favorite+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorite+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		3C07C4D42AF4075C00AFFFC8 /* ProfileViewCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewCoreData.swift; sourceTree = "<group>"; };
+		3C07C4D62AF407B200AFFFC8 /* DrinkListViewCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkListViewCoreData.swift; sourceTree = "<group>"; };
+		3C07C4D82AF407CF00AFFFC8 /* DrinkDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkDetailView.swift; sourceTree = "<group>"; };
 		3C27FB7D2AE9764F005C865F /* ImageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 		3C27FB7F2AE976B5005C865F /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		3C27FB832AE97718005C865F /* UserListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
@@ -68,6 +82,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C07C4C92AF4060400AFFFC8 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				3C07C4CF2AF4068E00AFFFC8 /* Favorite+CoreDataClass.swift */,
+				3C07C4D02AF4068E00AFFFC8 /* Favorite+CoreDataProperties.swift */,
+				3C07C4CA2AF4061D00AFFFC8 /* CoreDataContainer.swift */,
+				3C07C4CC2AF4063B00AFFFC8 /* AppDataModel.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		3C07C4D32AF406F200AFFFC8 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				3C07C4D42AF4075C00AFFFC8 /* ProfileViewCoreData.swift */,
+				3C07C4D62AF407B200AFFFC8 /* DrinkListViewCoreData.swift */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
 		3C45F5C72AF02A8A006B9129 /* Map */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +135,7 @@
 				3C45F5C72AF02A8A006B9129 /* Map */,
 				3C45F5C82AF02A94006B9129 /* Animation */,
 				3CFF026E2AE96EFB006ADD77 /* APIAndClass */,
+				3C07C4D32AF406F200AFFFC8 /* CoreData */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -111,6 +146,7 @@
 				3C27FB7D2AE9764F005C865F /* ImageModel.swift */,
 				3C954E992AE97C78009EE498 /* DrinkModel.swift */,
 				3C27FB7F2AE976B5005C865F /* UserModel.swift */,
+				3C07C4C92AF4060400AFFFC8 /* CoreData */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -131,6 +167,7 @@
 				3C27FB832AE97718005C865F /* UserListView.swift */,
 				3C45F5C52AF02A48006B9129 /* ProfileView.swift */,
 				3CA605B92AEBEB7A00DF48DD /* DrinkListView.swift */,
+				3C07C4D82AF407CF00AFFFC8 /* DrinkDetailView.swift */,
 			);
 			name = APIAndClass;
 			sourceTree = "<group>";
@@ -269,20 +306,27 @@
 				5274EEBE2AE7ED5F001C86E5 /* MapView.swift in Sources */,
 				3CFF02752AE96F3A006ADD77 /* RootView.swift in Sources */,
 				3C6DBE0A2AE2686C00F5C141 /* OptionalValues.swift in Sources */,
+				3C07C4D22AF4068E00AFFFC8 /* Favorite+CoreDataProperties.swift in Sources */,
 				52CA44632AD5831900CF404B /* GitHubExerciceApp.swift in Sources */,
 				528D11382AEC0177000B772F /* ConfettiViewModel.swift in Sources */,
 				3CFF02672AE96E92006ADD77 /* local.env.swift in Sources */,
+				3C07C4D52AF4075C00AFFFC8 /* ProfileViewCoreData.swift in Sources */,
 				3C27FB842AE97718005C865F /* UserListView.swift in Sources */,
+				3C07C4CE2AF4063B00AFFFC8 /* AppDataModel.xcdatamodeld in Sources */,
 				528D11362AEC00D9000B772F /* ConfettiView.swift in Sources */,
 				3C954E962AE9787F009EE498 /* UserAPIRequestViewModel.swift in Sources */,
+				3C07C4D72AF407B200AFFFC8 /* DrinkListViewCoreData.swift in Sources */,
+				3C07C4CB2AF4061D00AFFFC8 /* CoreDataContainer.swift in Sources */,
 				3CA605B82AEBE78700DF48DD /* DrinkAPIRequestViewModel.swift in Sources */,
 				3C45F5C62AF02A48006B9129 /* ProfileView.swift in Sources */,
 				5274EEBB2AE7EA36001C86E5 /* LocationManager.swift in Sources */,
 				3C27FB802AE976B5005C865F /* UserModel.swift in Sources */,
 				3C45F5C42AF028D3006B9129 /* DataControllerViewModel.swift in Sources */,
 				3C6DBE2B2AE2AF0A00F5C141 /* OptionalValuesGuardLet.swift in Sources */,
+				3C07C4D92AF407CF00AFFFC8 /* DrinkDetailView.swift in Sources */,
 				3CA605BA2AEBEB7A00DF48DD /* DrinkListView.swift in Sources */,
 				3C6DBE292AE2ACAC00F5C141 /* OptionalValuesIfLet.swift in Sources */,
+				3C07C4D12AF4068E00AFFFC8 /* Favorite+CoreDataClass.swift in Sources */,
 				3C27FB7E2AE9764F005C865F /* ImageModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -493,6 +537,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3C07C4CC2AF4063B00AFFFC8 /* AppDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3C07C4CD2AF4063B00AFFFC8 /* AppDataModel.xcdatamodel */,
+			);
+			currentVersion = 3C07C4CD2AF4063B00AFFFC8 /* AppDataModel.xcdatamodel */;
+			path = AppDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 52CA44572AD5831900CF404B /* Project object */;
 }

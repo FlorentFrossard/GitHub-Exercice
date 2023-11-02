@@ -19,7 +19,7 @@ struct RootView: View {
     //sinon impossible de stocker les informations que l'utilisateur renseigne
     @StateObject var userSession = User(id: "989zfozrg8723", name: "Zo", status: "Feels cold", notes: "Tea and hot chocolate baby~", image: [DataBaseImage(id: "zigjzprigj", width: 1000, height: 1000, url: "", filename: "day16-retro-cassette", size: 2800, type: "image/jpeg", thumbnails: Thumbnails(small: .init(url: "", width: 0, height: 0), large: .init(url: "", width: 0, height: 0), full: .init(url: "", width: 1000, height: 1000)))], drink: [String](), idFromDrink: [String]())
     
-    
+    @StateObject var coreDataContainer = CoreDataContainer()
     
     var body: some View {
         TabView {
@@ -31,11 +31,11 @@ struct RootView: View {
                 .tabItem {
                     Label("Connexions", systemImage: "person.3.fill")
                 }
-            DrinkListView()
+            DrinkListViewCoreData()
                 .tabItem {
                     Label("Selections", systemImage: "mug.fill")
                 }
-            ProfileView()
+            ProfileViewCoreData()
                 .tabItem {
                     Label("Profil", systemImage: "person.fill")
                 }
@@ -53,6 +53,8 @@ struct RootView: View {
         .environmentObject(userRequest)
         .environmentObject(drinkRequest)
         .environmentObject(userSession)
+        //on init le context pour observer notre donnée et le container pour que les deux communique ensemble
+        .environment(\.managedObjectContext, coreDataContainer.container.viewContext)
         
     }
 }

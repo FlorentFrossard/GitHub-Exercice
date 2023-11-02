@@ -11,6 +11,10 @@ class DrinkAPIRequestViewModel: ObservableObject {
     
     @Published var allDrink = [Drink]()
     
+    func formatPrice(index: Int) -> String {
+       String(format: "%.2f", self.allDrink[index].price)
+    }
+    
     func fetchedDrinks() async -> [Drink] {
         var fetchedDrinks = [Drink]()
         

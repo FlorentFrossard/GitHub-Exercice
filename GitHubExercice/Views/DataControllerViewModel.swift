@@ -14,4 +14,6 @@ class DataControllerViewModel: ObservableObject {
     
     //@Published var exemple = DrinkRequest()
     //@Published var user = User(id: ....)
+    
+    
 }
