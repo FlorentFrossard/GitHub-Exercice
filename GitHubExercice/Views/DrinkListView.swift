@@ -19,58 +19,7 @@ struct DrinkListView: View {
             ScrollView {
                 LazyVStack(alignment: .leading) {
                     ForEach(drinkRequest.allDrink) { drink in
-                        HStack(alignment: .top) {
-                            if let imageFound = drink.image.first {
-                                AsyncImage(url: URL(string: imageFound.url)) { phase in
-                                    if let image = phase.image {
-                                        image
-                                            .resizable()
-                                            .scaledToFill()
-                                    } else if phase.error != nil {
-                                        Image(systemName: "mug.full")
-                                    } else {
-                                        ProgressView()
-                                    }
-                                }
-                                .frame(width: 100, height: 100)
-                                .clipShape(RoundedRectangle(cornerRadius: 20))
-                            }
-                            
-                            Text(drink.name)
-                            Button {
-                                //$0.id -> n'importe quel élément de l'array allDrink
-                                //drink.id -> mot clé de mon ForEach
-                                //on compare les id des deux pour les identifier
-                                //si les drinks correspondent on stock l'index (firstIndex)
-                                if let index = drinkRequest.allDrink.firstIndex(where:{$0.id == drink.id}) {
-                                
-                                    //si la valeur favorite == true
-                                    if drinkRequest.allDrink[index].favorite == true {
-                                        
-                                        //transforme la valeur en false parce qu'on appuis sur le même button, donc on retire de nos favoris cette élément
-                                        drinkRequest.allDrink[index].favorite = false
-                                        
-                                        //l'utilisateur enregistré à un array d'id ou y sont les Drink = Drink.id -> idFromDrink
-                                        //on compare ça avec le drink.id du ForEach
-                                        if let favIndex = userSession.idFromDrink.firstIndex(where: {$0 == drink.id}) {
-                                            //on retire de ces favoris l'élément qui correspond en fonction de l'index récup a la ligne du dessus
-                                            userSession.idFromDrink.remove(at: favIndex)
-                                            
-                                        }
-                                    } else {
-                                        //tel élément je te transform en true
-                                        drinkRequest.allDrink[index].favorite = true
-                                        
-                                        //on ajoute dans mon array favoris (idFromDrink) l'id de l'élément sélectionné
-                                        userSession.idFromDrink.append(drinkRequest.allDrink[index].id)
-                                    }
-                                }
-                                
-                          
-                            } label: {
-                                Image(systemName: drink.favorite == true ? "star.fill" : "star")
-                            }
-                        }
+                        ExtractedView(id: drink.id)
                        
                     }
                 }
@@ -84,4 +33,57 @@ struct DrinkListView: View {
 #Preview {
     DrinkListView()
         .environmentObject(DrinkAPIRequestViewModel())
+}
+
+struct ExtractedView: View {
+    @EnvironmentObject var drinkRequest: DrinkAPIRequestViewModel
+    @EnvironmentObject var userSession: User
+    var id: String
+    var body: some View {
+        if let index = drinkRequest.allDrink.firstIndex(where:{$0.id == id}) {
+        HStack(alignment: .top) {
+            if let imageFound = drinkRequest.allDrink[index].image.first {
+                AsyncImagePhases(unwrappedImage: imageFound, widthFrame: 100, heightFrame: 100)
+            }
+            
+            Text(drinkRequest.allDrink[index].name)
+         
+            Button {
+                //$0.id -> n'importe quel élément de l'array allDrink
+                //drink.id -> mot clé de mon ForEach
+                //on compare les id des deux pour les identifier
+                //si les drinks correspondent on stock l'index (firstIndex)
+               
+                    
+                    //si la valeur favorite == true
+                    if drinkRequest.allDrink[index].favorite == true {
+                        
+                        //transforme la valeur en false parce qu'on appuis sur le même button, donc on retire de nos favoris cette élément
+                        drinkRequest.allDrink[index].favorite = false
+                        
+                        //l'utilisateur enregistré à un array d'id ou y sont les Drink = Drink.id -> idFromDrink
+                        //on compare ça avec le drink.id du ForEach
+                        if let favIndex = userSession.idFromDrink.firstIndex(where: {$0 == id}) {
+                            //on retire de ces favoris l'élément qui correspond en fonction de l'index récup a la ligne du dessus
+                            userSession.idFromDrink.remove(at: favIndex)
+                            
+                        }
+                    } else {
+                        //tel élément je te transform en true
+                        drinkRequest.allDrink[index].favorite = true
+                        
+                        //on ajoute dans mon array favoris (idFromDrink) l'id de l'élément sélectionné
+                        userSession.idFromDrink.append(drinkRequest.allDrink[index].id)
+                    }
+              
+                
+                
+            } label: {
+                Image(systemName: drinkRequest.allDrink[index].favorite == true ? "star.fill" : "star")
+            }
+           
+            
+        }
+    }
+    }
 }

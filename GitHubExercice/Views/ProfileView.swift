@@ -30,20 +30,7 @@ struct ProfileView: View {
                     VStack {
                         
                         if let imageFound = unwrappedUser.image.first {
-                            AsyncImage(url: URL(string: imageFound.url)) { phase in
-                                if let image = phase.image {
-                                    image
-                                        .resizable()
-                                        .scaledToFill()
-                                } else if phase.error != nil {
-                                    Text("Image indisponible")
-                                } else {
-                                    ProgressView()
-                                }
-                            }
-                            .frame(width: 200, height: 200)
-                            .clipShape(RoundedRectangle(cornerRadius: 20))
-                            
+                            AsyncImagePhases(unwrappedImage: imageFound, widthFrame: 200, heightFrame: 200)
                         }
                         
                         Text(unwrappedUser.name)
@@ -72,19 +59,7 @@ struct ProfileView: View {
                                                 
                                                 if drink.id == id {
                                                     if let imageFound = drink.image.first {
-                                                        AsyncImage(url: URL(string: imageFound.url)) { phase in
-                                                            if let image = phase.image {
-                                                                image
-                                                                    .resizable()
-                                                                    .scaledToFill()
-                                                            } else if phase.error != nil {
-                                                                Image(systemName: "mug.full")
-                                                            } else {
-                                                                ProgressView()
-                                                            }
-                                                        }
-                                                        .frame(width: 100, height: 100)
-                                                        .clipShape(RoundedRectangle(cornerRadius: 20))
+                                                        AsyncImagePhases(unwrappedImage: imageFound, widthFrame: 100, heightFrame: 100)
                                                     }
                                                     
                                                     
@@ -107,63 +82,7 @@ struct ProfileView: View {
                 }
                 //sinon on rentre dans ce block de condition où on affiche l'utilisateur connecté
             } else {
-                NavigationStack {
-                    VStack {
-                        Image(userSession.image[0].filename)
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 200, height: 200, alignment: .center)
-                            .clipShape(RoundedRectangle(cornerRadius: 20))
-                        
-                        
-                        Text(userSession.name)
-                            .font(.largeTitle)
-                        Text(" \"\(userSession.notes)\"")
-                        Text(userSession.status)
-                            .foregroundStyle(Color.gray)
-                        
-                        
-                        VStack(alignment: .leading, spacing: 0) {
-                            Text("Mes favoris")
-                            
-                            //on fait la même chose ici que ce qui est fait plus haut
-                            //check entre deux id
-                            if userSession.idFromDrink.isEmpty {
-                                Text("Vous n'avez rien ajouté dans votre liste de favoris")
-                            } else {
-                                ScrollView {
-                                    ForEach(drinkRequest.allDrink) { drink in
-                                        ForEach(userSession.idFromDrink, id: \.self) { id in
-                                            
-                                            if drink.id == id {
-                                                if let imageFound = drink.image.first {
-                                                    AsyncImage(url: URL(string: imageFound.url)) { phase in
-                                                        if let image = phase.image {
-                                                            image
-                                                                .resizable()
-                                                                .scaledToFill()
-                                                        } else if phase.error != nil {
-                                                            Image(systemName: "mug.full")
-                                                        } else {
-                                                            ProgressView()
-                                                        }
-                                                    }
-                                                    .frame(width: 100, height: 100)
-                                                    .clipShape(RoundedRectangle(cornerRadius: 20))
-                                                }
-                                                
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        .frame(maxWidth: .infinity)
-                        
-                        Spacer()
-                        
-                    }.navigationTitle("Profil")
-                }
+                UserSessionProfil()
             }
             
         }

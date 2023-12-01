@@ -19,19 +19,7 @@ struct DrinkDetailView: View {
                 .font(.largeTitle)
             
             if let imageFound = drinkRequest.allDrink[index].image.first {
-                AsyncImage(url: URL(string: imageFound.url)) { phase in
-                    if let image = phase.image {
-                        image
-                            .resizable()
-                            .scaledToFill()
-                    } else if phase.error != nil {
-                        Image(systemName: "mug.full")
-                    } else {
-                        ProgressView()
-                    }
-                }
-                .frame(width: 100, height: 100)
-                .clipShape(RoundedRectangle(cornerRadius: 20))
+                AsyncImagePhases(unwrappedImage: imageFound, widthFrame: 100, heightFrame: 100)
             }
             
             Text("Coût: \(drinkRequest.formatPrice(index: index)) €")
