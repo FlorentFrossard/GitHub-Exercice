@@ -22,6 +22,7 @@
 		3C6DBE0A2AE2686C00F5C141 /* OptionalValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DBE092AE2686C00F5C141 /* OptionalValues.swift */; };
 		3C6DBE292AE2ACAC00F5C141 /* OptionalValuesIfLet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DBE282AE2ACAC00F5C141 /* OptionalValuesIfLet.swift */; };
 		3C6DBE2B2AE2AF0A00F5C141 /* OptionalValuesGuardLet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DBE2A2AE2AF0A00F5C141 /* OptionalValuesGuardLet.swift */; };
+		3C740C682B19E6C400307CFD /* AsyncImagePhases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C740C672B19E6C400307CFD /* AsyncImagePhases.swift */; };
 		3C954E962AE9787F009EE498 /* UserAPIRequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C954E952AE9787F009EE498 /* UserAPIRequestViewModel.swift */; };
 		3C954E9A2AE97C78009EE498 /* DrinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C954E992AE97C78009EE498 /* DrinkModel.swift */; };
 		3CA605B82AEBE78700DF48DD /* DrinkAPIRequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA605B72AEBE78700DF48DD /* DrinkAPIRequestViewModel.swift */; };
@@ -54,6 +55,7 @@
 		3C6DBE092AE2686C00F5C141 /* OptionalValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalValues.swift; sourceTree = "<group>"; };
 		3C6DBE282AE2ACAC00F5C141 /* OptionalValuesIfLet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalValuesIfLet.swift; sourceTree = "<group>"; };
 		3C6DBE2A2AE2AF0A00F5C141 /* OptionalValuesGuardLet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalValuesGuardLet.swift; sourceTree = "<group>"; };
+		3C740C672B19E6C400307CFD /* AsyncImagePhases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImagePhases.swift; sourceTree = "<group>"; };
 		3C954E952AE9787F009EE498 /* UserAPIRequestViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAPIRequestViewModel.swift; sourceTree = "<group>"; };
 		3C954E992AE97C78009EE498 /* DrinkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkModel.swift; sourceTree = "<group>"; };
 		3CA605B72AEBE78700DF48DD /* DrinkAPIRequestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkAPIRequestViewModel.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 		5274EEBC2AE7EAFD001C86E5 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				3C740C672B19E6C400307CFD /* AsyncImagePhases.swift */,
 				5274EEBA2AE7EA36001C86E5 /* LocationManager.swift */,
 				3CFF02662AE96E92006ADD77 /* local.env.swift */,
 			);
@@ -315,6 +318,7 @@
 				3C07C4CE2AF4063B00AFFFC8 /* AppDataModel.xcdatamodeld in Sources */,
 				528D11362AEC00D9000B772F /* ConfettiView.swift in Sources */,
 				3C954E962AE9787F009EE498 /* UserAPIRequestViewModel.swift in Sources */,
+				3C740C682B19E6C400307CFD /* AsyncImagePhases.swift in Sources */,
 				3C07C4D72AF407B200AFFFC8 /* DrinkListViewCoreData.swift in Sources */,
 				3C07C4CB2AF4061D00AFFFC8 /* CoreDataContainer.swift in Sources */,
 				3CA605B82AEBE78700DF48DD /* DrinkAPIRequestViewModel.swift in Sources */,
