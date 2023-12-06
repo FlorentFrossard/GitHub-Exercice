@@ -29,19 +29,7 @@ struct DrinkListViewCoreData: View {
                                 
                             HStack(alignment: .top) {
                                     if let imageFound = drink.image.first {
-                                        AsyncImage(url: URL(string: imageFound.url)) { phase in
-                                            if let image = phase.image {
-                                                image
-                                                    .resizable()
-                                                    .scaledToFill()
-                                            } else if phase.error != nil {
-                                                Image(systemName: "mug.full")
-                                            } else {
-                                                ProgressView()
-                                            }
-                                        }
-                                        .frame(width: 100, height: 100)
-                                        .clipShape(RoundedRectangle(cornerRadius: 20))
+                                        AsyncImagePhases(unwrappedImageURL: imageFound.url, widthFrame: 100, heightFrame: 100)
                                        
                                     }
                                 

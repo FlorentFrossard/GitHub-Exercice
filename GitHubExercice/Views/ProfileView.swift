@@ -30,7 +30,7 @@ struct ProfileView: View {
                     VStack {
                         
                         if let imageFound = unwrappedUser.image.first {
-                            AsyncImagePhases(unwrappedImage: imageFound, widthFrame: 200, heightFrame: 200)
+                            AsyncImagePhases(unwrappedImageURL: imageFound.url, widthFrame: 200, heightFrame: 200)
                         }
                         
                         Text(unwrappedUser.name)
@@ -38,9 +38,7 @@ struct ProfileView: View {
                         Text(" \"\(unwrappedUser.notes)\"")
                         Text(unwrappedUser.status)
                             .foregroundStyle(Color.gray)
-                        
-                        
-                        
+
                         VStack(alignment: .leading, spacing: 0) {
                             Text("Mes favoris")
                             
@@ -59,15 +57,10 @@ struct ProfileView: View {
                                                 
                                                 if drink.id == id {
                                                     if let imageFound = drink.image.first {
-                                                        AsyncImagePhases(unwrappedImage: imageFound, widthFrame: 100, heightFrame: 100)
+                                                        AsyncImagePhases(unwrappedImageURL: imageFound.url, widthFrame: 100, heightFrame: 100)
                                                     }
-                                                    
-                                                    
                                                 }
-                                                
-                                                
                                             }
-                                            
                                         }
                                     }
                                 }

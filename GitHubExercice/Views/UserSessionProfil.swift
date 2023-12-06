@@ -42,7 +42,7 @@ struct UserSessionProfil: View {
                                     
                                     if drink.id == id {
                                         if let imageFound = drink.image.first {
-                                            AsyncImagePhases(unwrappedImage: imageFound, widthFrame: 100, heightFrame: 100)
+                                            AsyncImagePhases(unwrappedImageURL: imageFound.url, widthFrame: 100, heightFrame: 100)
                                         }
                                         
                                     }

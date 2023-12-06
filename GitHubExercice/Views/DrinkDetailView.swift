@@ -19,7 +19,7 @@ struct DrinkDetailView: View {
                 .font(.largeTitle)
             
             if let imageFound = drinkRequest.allDrink[index].image.first {
-                AsyncImagePhases(unwrappedImage: imageFound, widthFrame: 100, heightFrame: 100)
+                AsyncImagePhases(unwrappedImageURL: imageFound.url, widthFrame: 100, heightFrame: 100)
             }
             
             Text("Coût: \(drinkRequest.formatPrice(index: index)) €")

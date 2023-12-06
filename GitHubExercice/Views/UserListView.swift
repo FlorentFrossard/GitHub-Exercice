@@ -16,26 +16,19 @@ struct UserListView: View {
         NavigationStack {
             ScrollView {
                 LazyVStack(alignment: .leading) {
-                    
                     ForEach(userRequest.allUser) { user in
                         NavigationLink(destination: ProfileView(user: user), label: {
-                            
                             HStack(alignment: .top) {
                                 if let imageFound = user.image.first {
-                                    AsyncImagePhases(unwrappedImage: imageFound, widthFrame: 100, heightFrame: 100)
+                                    AsyncImagePhases(unwrappedImageURL: imageFound.url, widthFrame: 100, heightFrame: 100)
                                 }
-                                
-                                
                                 VStack {
                                     Text(user.name)
                                         .font(.title2)
                                         .bold()
                                         .foregroundStyle(Color.black)
-                                    
                                 }
                             }
-                            
-                            
                         })
                         
                     }

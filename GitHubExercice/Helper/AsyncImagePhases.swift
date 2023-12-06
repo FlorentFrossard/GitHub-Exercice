@@ -9,12 +9,12 @@ import SwiftUI
 
 struct AsyncImagePhases: View {
     
-    let unwrappedImage: DataBaseImage
+    let unwrappedImageURL: String
     let widthFrame: CGFloat
     let heightFrame: CGFloat
     
     var body: some View {
-        AsyncImage(url: URL(string: unwrappedImage.url)) { phase in
+        AsyncImage(url: URL(string: unwrappedImageURL)) { phase in
             if let image = phase.image {
                 image
                     .resizable()

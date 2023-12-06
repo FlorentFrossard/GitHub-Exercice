@@ -40,20 +40,7 @@ struct ProfileViewCoreData: View {
                     VStack {
                         
                         if let imageFound = unwrappedUser.image.first {
-                            AsyncImage(url: URL(string: imageFound.url)) { phase in
-                                if let image = phase.image {
-                                    image
-                                        .resizable()
-                                        .scaledToFill()
-                                } else if phase.error != nil {
-                                    Text("Image indisponible")
-                                } else {
-                                    ProgressView()
-                                }
-                            }
-                            .frame(width: 200, height: 200)
-                            .clipShape(RoundedRectangle(cornerRadius: 20))
-                            
+                            AsyncImagePhases(unwrappedImageURL: imageFound.url, widthFrame: 200, heightFrame: 200)
                         }
                         
                         Text(unwrappedUser.name)
@@ -82,19 +69,7 @@ struct ProfileViewCoreData: View {
                                                 
                                                 if drink.id == id {
                                                     if let imageFound = drink.image.first {
-                                                        AsyncImage(url: URL(string: imageFound.url)) { phase in
-                                                            if let image = phase.image {
-                                                                image
-                                                                    .resizable()
-                                                                    .scaledToFill()
-                                                            } else if phase.error != nil {
-                                                                Image(systemName: "mug.full")
-                                                            } else {
-                                                                ProgressView()
-                                                            }
-                                                        }
-                                                        .frame(width: 200, height: 200)
-                                                        .clipShape(RoundedRectangle(cornerRadius: 20))
+                                                        AsyncImagePhases(unwrappedImageURL: imageFound.url, widthFrame: 200, heightFrame: 200)
                                                     }
                                                     
                                                     
@@ -152,19 +127,7 @@ struct ProfileViewCoreData: View {
                                     ForEach(favoriteDrink) { favDrink in
                                         HStack(alignment: .top) {
                                             
-                                            AsyncImage(url: URL(string: favDrink.wrappedImage)) { phase in
-                                                if let image = phase.image {
-                                                    image
-                                                        .resizable()
-                                                        .scaledToFill()
-                                                } else if phase.error != nil {
-                                                    Image(systemName: "mug.full")
-                                                } else {
-                                                    ProgressView()
-                                                }
-                                            }
-                                            .frame(width: 100, height: 100)
-                                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                                            AsyncImagePhases(unwrappedImageURL: favDrink.wrappedImage, widthFrame: 100, heightFrame: 100)
                                             
                                             
                                             

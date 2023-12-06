@@ -19,8 +19,7 @@ struct DrinkListView: View {
             ScrollView {
                 LazyVStack(alignment: .leading) {
                     ForEach(drinkRequest.allDrink) { drink in
-                        ExtractedView(id: drink.id)
-                       
+                        ExtractedDrinkCard(id: drink.id)
                     }
                 }
                 .padding()
@@ -35,7 +34,7 @@ struct DrinkListView: View {
         .environmentObject(DrinkAPIRequestViewModel())
 }
 
-struct ExtractedView: View {
+struct ExtractedDrinkCard: View {
     @EnvironmentObject var drinkRequest: DrinkAPIRequestViewModel
     @EnvironmentObject var userSession: User
     var id: String
@@ -43,7 +42,7 @@ struct ExtractedView: View {
         if let index = drinkRequest.allDrink.firstIndex(where:{$0.id == id}) {
         HStack(alignment: .top) {
             if let imageFound = drinkRequest.allDrink[index].image.first {
-                AsyncImagePhases(unwrappedImage: imageFound, widthFrame: 100, heightFrame: 100)
+                AsyncImagePhases(unwrappedImageURL: imageFound.url, widthFrame: 100, heightFrame: 100)
             }
             
             Text(drinkRequest.allDrink[index].name)
