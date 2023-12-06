@@ -28,6 +28,7 @@
 		3C954E9A2AE97C78009EE498 /* DrinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C954E992AE97C78009EE498 /* DrinkModel.swift */; };
 		3CA605B82AEBE78700DF48DD /* DrinkAPIRequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA605B72AEBE78700DF48DD /* DrinkAPIRequestViewModel.swift */; };
 		3CA605BA2AEBEB7A00DF48DD /* DrinkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA605B92AEBEB7A00DF48DD /* DrinkListView.swift */; };
+		3CB78ABE2B2087B800C82764 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB78ABD2B2087B800C82764 /* UserViewModel.swift */; };
 		3CFF02672AE96E92006ADD77 /* local.env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFF02662AE96E92006ADD77 /* local.env.swift */; };
 		3CFF02752AE96F3A006ADD77 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFF02742AE96F3A006ADD77 /* RootView.swift */; };
 		5274EEBB2AE7EA36001C86E5 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274EEBA2AE7EA36001C86E5 /* LocationManager.swift */; };
@@ -62,6 +63,7 @@
 		3C954E992AE97C78009EE498 /* DrinkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkModel.swift; sourceTree = "<group>"; };
 		3CA605B72AEBE78700DF48DD /* DrinkAPIRequestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkAPIRequestViewModel.swift; sourceTree = "<group>"; };
 		3CA605B92AEBEB7A00DF48DD /* DrinkListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkListView.swift; sourceTree = "<group>"; };
+		3CB78ABD2B2087B800C82764 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		3CFF02662AE96E92006ADD77 /* local.env.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = local.env.swift; sourceTree = "<group>"; };
 		3CFF02742AE96F3A006ADD77 /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootView.swift; path = ../Views/RootView.swift; sourceTree = "<group>"; };
 		5274EEBA2AE7EA36001C86E5 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 			children = (
 				3CB78ABB2B20834000C82764 /* APIRequestUsers */,
 				3CB78ABA2B20832D00C82764 /* APIRequestDrinks */,
+				3CB78ABD2B2087B800C82764 /* UserViewModel.swift */,
 				3C45F5C32AF028D3006B9129 /* DataControllerViewModel.swift */,
 				528D11372AEC0177000B772F /* ConfettiViewModel.swift */,
 			);
@@ -344,6 +347,7 @@
 				3C27FB842AE97718005C865F /* UserListView.swift in Sources */,
 				3C07C4CE2AF4063B00AFFFC8 /* AppDataModel.xcdatamodeld in Sources */,
 				528D11362AEC00D9000B772F /* ConfettiView.swift in Sources */,
+				3CB78ABE2B2087B800C82764 /* UserViewModel.swift in Sources */,
 				3C954E962AE9787F009EE498 /* UserAPIRequestViewModel.swift in Sources */,
 				3C740C682B19E6C400307CFD /* AsyncImagePhases.swift in Sources */,
 				3C07C4D72AF407B200AFFFC8 /* DrinkListViewCoreData.swift in Sources */,

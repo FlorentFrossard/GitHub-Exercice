@@ -134,7 +134,7 @@ struct ProfileViewCoreData: View {
                                             Text(favDrink.wrappedName)
                                             Spacer()
                                             Button {
-                                                //ici on verifie si les deux ids correspondent histoire d'identifier les éléments
+                                                //ici on vérifie si les deux ids correspondent histoire d'identifier les éléments
                                                 //en résultat on récup un index
                                                 if let favIndex = favoriteDrink.firstIndex(where: { $0.id == favDrink.id }) {
                                                     
@@ -144,18 +144,17 @@ struct ProfileViewCoreData: View {
                                                     
                                                     //pointer l'élément dont sa valeur changé a false pour la supprimer
                                                     favoriteDrink[favIndex].favorite = false
-                                                    //on supprime l'élément sur lequel on a appuyé
-                                                    moc.delete(favoriteDrink[favIndex])
                                                     
+                                                    
+                                                    //on supprime l'élément sur lequel on a appuyé
                                                     //on demande au context (moc) si il a observé des modifications
                                                     //si oui on sauvegarde la mise à jour
                                                     //ici on enlève dans persistentStore la donnée sélectionnée
-                                                    if favoriteDrink[favIndex].favorite == false {
-                                                        if moc.hasChanges {
-                                                            try? moc.save()
-                                                        }
-                                                    }
-                                                    //on répercute l'action sur la liste des drinks provenant du pull API
+                                                    //MARK: AJOUTER LA FONCTION DE REMOVE QUI PROVIENT DU VM
+                                                    
+                                                    
+                                                    
+
                                                     
                                                     
                                                 }

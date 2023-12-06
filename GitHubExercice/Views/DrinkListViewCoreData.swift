@@ -49,21 +49,10 @@ struct DrinkListViewCoreData: View {
                                         
                                             //si la valeur favorite == true
                                             if drinkRequest.allDrink[index].favorite == true {
-                                                
-                                                
                                                 drinkRequest.allDrink[index].favorite = false
-                                                print(drinkRequest.allDrink[index].favorite!)
                                                 
                                                 //on fait la même chose pour la partie Core Data
-                                                if let favIndex = favoriteDrink.firstIndex(where: { $0.id == drink.id}) {
-                                                    favoriteDrink[favIndex].favorite = false
-                                                    //puis on enlève l'élément de nos favoris via le context
-                                                    //et on sauvegarde le changement
-                                                    moc.delete(favoriteDrink[favIndex])
-                                                    if moc.hasChanges {
-                                                        try? moc.save()
-                                                    }
-                                                }
+                                                //MARK: AJOUTER LA FONCTION DE REMOVE QUI PROVIENT DU VM
 //
                                                 
                                                 
@@ -73,18 +62,7 @@ struct DrinkListViewCoreData: View {
                                                 
                                                 //lorsqu'on appuis sur l'étoile on ajoute un objet Favorite dans notre context
                                                 //on renseigne les infos dont on a besoin
-                                                let newFav = Favorite(context: moc)
-                                                newFav.name = drinkRequest.allDrink[index].name
-                                                newFav.favorite = drinkRequest.allDrink[index].favorite!
-                                                newFav.id = drinkRequest.allDrink[index].id
-                                                newFav.price = drinkRequest.allDrink[index].price
-                                                newFav.user = userSession.id
-                                                newFav.image = drinkRequest.allDrink[index].image[0].url
-                                                
-                                                //puis on sauvegarde si un changement a eu lieu
-                                                if moc.hasChanges {
-                                                    try? moc.save()
-                                                }
+                                                //MARK: AJOUTER LA FONCTION D'AJOUTER UN FAV QUI VIENT DU VM
                                              
                                             }
                                       
