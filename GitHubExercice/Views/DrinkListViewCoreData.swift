@@ -12,9 +12,9 @@ struct DrinkListViewCoreData: View {
     //ici on a au moins besoin du pull API des Drinks
     //mais aussi de l'utilisateur renseigné car seul lui peut mettre en favoris ces éléments
     @EnvironmentObject var drinkRequest: DrinkAPIRequestViewModel
-    @EnvironmentObject var userSession: User
+    @EnvironmentObject var userSession: UserViewModel
     
-    //CORE DATA
+//    //CORE DATA
     @FetchRequest(sortDescriptors: []) var favoriteDrink: FetchedResults<Favorite>
     @Environment(\.managedObjectContext) var moc
     
@@ -60,10 +60,7 @@ struct DrinkListViewCoreData: View {
                                                 //tel élément je te transform en true
                                                 drinkRequest.allDrink[index].favorite = true
                                                 
-                                                //lorsqu'on appuis sur l'étoile on ajoute un objet Favorite dans notre context
-                                                //on renseigne les infos dont on a besoin
-                                                //MARK: AJOUTER LA FONCTION D'AJOUTER UN FAV QUI VIENT DU VM
-                                             
+                                                userSession.addCoreDataDrinksToFavorite(chosenDrink: drinkRequest, index: index, CoreDataContext: moc)
                                             }
                                       
                                     } label: {

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProfileViewCoreData: View {
     //ce userSession correspond a l'utilisateur qui utilise son téléphone et/ou qui est enregistré
-    @EnvironmentObject var userSession: User
+    @EnvironmentObject var userSession: UserViewModel
     
     //comme on va afficher des drink il nous faut appeler tous Drink dans cette vue aussi
     @EnvironmentObject var drinkRequest: DrinkAPIRequestViewModel
@@ -17,7 +17,7 @@ struct ProfileViewCoreData: View {
     
     //et comme on veut utiliser la même vue de profil, au lieu de l'écrire 2 fois on passe en optionnel un User
     //si on a bien 1 autre utilisateur (différent de celui enregistré) alors on affiche cette utilisateur
-    var user: User?
+    var otherUser: User?
     
     //on appel le context vue qu'on veut effectuer des changements
     @Environment(\.managedObjectContext) var moc
@@ -32,11 +32,11 @@ struct ProfileViewCoreData: View {
         ZStack {
             //ici on s'assure que le l'autre utilisateur est bien existant (l'optionnel)
             //si oui on rentre dans cette condition et on stock l'utilisateur existant dans unwrappedUser
-            if let unwrappedUser = user {
+            if let unwrappedUser = otherUser {
                 
                 //ensuite on compare l'id de l'autre utilisateur avec l'id de celui connecté
                 //si les id sont différent alors on on rentre dans le if pour afficher les infos du l'utilisateur optionnel
-                if unwrappedUser.id != userSession.id {
+                if unwrappedUser.id != userSession.user.id {
                     VStack {
                         
                         if let imageFound = unwrappedUser.image.first {
@@ -92,89 +92,7 @@ struct ProfileViewCoreData: View {
                 }
                 //sinon on rentre dans ce block de condition où on affiche l'utilisateur connecté
             } else {
-                NavigationStack {
-                    VStack {
-                        Image(userSession.image[0].filename)
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 200, height: 200, alignment: .center)
-                            .clipShape(RoundedRectangle(cornerRadius: 20))
-//                            .clipped()
-                        
-                        Text(userSession.name)
-                            .font(.largeTitle)
-                        Text(" \"\(userSession.notes)\"")
-                        Text(userSession.status)
-                            .foregroundStyle(Color.gray)
-                        
-                        
-                        VStack(alignment: .leading, spacing: 0) {
-                            HStack {
-                                Text("Mes favoris")
-                                    .padding()
-                                Spacer()
-                            }
-                            
-                            //on fait la même chose ici que ce qui est fait plus haut
-                            //check entre deux id
-                            if favoriteDrink.isEmpty {
-                                Text("Vous n'avez rien ajouté dans votre liste de favoris")
-                                    .padding(.horizontal)
-                                
-                            } else {
-                                ScrollView {
-                                    
-                                    ForEach(favoriteDrink) { favDrink in
-                                        HStack(alignment: .top) {
-                                            
-                                            AsyncImagePhases(unwrappedImageURL: favDrink.wrappedImage, widthFrame: 100, heightFrame: 100)
-                                            
-                                            
-                                            
-                                            Text(favDrink.wrappedName)
-                                            Spacer()
-                                            Button {
-                                                //ici on vérifie si les deux ids correspondent histoire d'identifier les éléments
-                                                //en résultat on récup un index
-                                                if let favIndex = favoriteDrink.firstIndex(where: { $0.id == favDrink.id }) {
-                                                    
-                                                    if let index = drinkRequest.allDrink.firstIndex(where: { $0.id == favDrink.id }) {
-                                                        drinkRequest.allDrink[index].favorite = false
-                                                    }
-                                                    
-                                                    //pointer l'élément dont sa valeur changé a false pour la supprimer
-                                                    favoriteDrink[favIndex].favorite = false
-                                                    
-                                                    
-                                                    //on supprime l'élément sur lequel on a appuyé
-                                                    //on demande au context (moc) si il a observé des modifications
-                                                    //si oui on sauvegarde la mise à jour
-                                                    //ici on enlève dans persistentStore la donnée sélectionnée
-                                                    //MARK: AJOUTER LA FONCTION DE REMOVE QUI PROVIENT DU VM
-                                                    
-                                                    
-                                                    
-
-                                                    
-                                                    
-                                                }
-                                            } label: {
-                                                Image(systemName: "star.fill")
-                                            }
-                                            .foregroundStyle(.yellow)
-                                            
-                                            
-                                        }
-                                    }
-                                }
-                                .padding()
-                            }
-                        }
-                        
-                        Spacer()
-                        
-                    }.navigationTitle("Profil")
-                }
+                UserSessionProfilCoreData()
             }
             
         }
@@ -182,7 +100,7 @@ struct ProfileViewCoreData: View {
 }
 
 #Preview {
-    ProfileView(user: User(id: "989zfozrg8723", name: "Zo", status: "Feels cold", notes: "Tea and hot chocolate baby~", image: [DataBaseImage(id: "zigjzprigj", width: 1000, height: 1000, url: "", filename: "day16-retro-cassette", size: 2800, type: "image/jpeg", thumbnails: Thumbnails(small: .init(url: "", width: 0, height: 0), large: .init(url: "", width: 0, height: 0), full: .init(url: "", width: 1000, height: 1000)))], drink: [String](), idFromDrink: [String]()))
+    ProfileView(otherUser: User(id: "989zfozrg8723", name: "Zo", status: "Feels cold", notes: "Tea and hot chocolate baby~", image: [DataBaseImage(id: "zigjzprigj", width: 1000, height: 1000, url: "", filename: "day16-retro-cassette", size: 2800, type: "image/jpeg", thumbnails: Thumbnails(small: .init(url: "", width: 0, height: 0), large: .init(url: "", width: 0, height: 0), full: .init(url: "", width: 1000, height: 1000)))], drink: [String](), idFromDrink: [String]()))
     
     
     

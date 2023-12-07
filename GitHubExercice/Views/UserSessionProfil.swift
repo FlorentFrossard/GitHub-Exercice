@@ -8,23 +8,23 @@
 import SwiftUI
 
 struct UserSessionProfil: View {
-    @EnvironmentObject var userSession: User
+    @EnvironmentObject var userSession: UserViewModel
     @EnvironmentObject var drinkRequest: DrinkAPIRequestViewModel
     
     var body: some View {
         NavigationStack {
             VStack {
-                Image(userSession.image[0].filename)
+                Image(userSession.user.image[0].filename)
                     .resizable()
                     .scaledToFill()
                     .frame(width: 200, height: 200, alignment: .center)
                     .clipShape(RoundedRectangle(cornerRadius: 20))
                 
                 
-                Text(userSession.name)
+                Text(userSession.user.name)
                     .font(.largeTitle)
-                Text(" \"\(userSession.notes)\"")
-                Text(userSession.status)
+                Text(" \"\(userSession.user.notes)\"")
+                Text(userSession.user.status)
                     .foregroundStyle(Color.gray)
                 
                 
@@ -33,12 +33,12 @@ struct UserSessionProfil: View {
                     
                     //on fait la même chose ici que ce qui est fait plus haut
                     //check entre deux id
-                    if userSession.idFromDrink.isEmpty {
+                    if userSession.user.idFromDrink.isEmpty {
                         Text("Vous n'avez rien ajouté dans votre liste de favoris")
                     } else {
                         ScrollView {
                             ForEach(drinkRequest.allDrink) { drink in
-                                ForEach(userSession.idFromDrink, id: \.self) { id in
+                                ForEach(userSession.user.idFromDrink, id: \.self) { id in
                                     
                                     if drink.id == id {
                                         if let imageFound = drink.image.first {

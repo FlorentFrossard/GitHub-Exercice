@@ -17,7 +17,7 @@ struct UserListView: View {
             ScrollView {
                 LazyVStack(alignment: .leading) {
                     ForEach(userRequest.allUser) { user in
-                        NavigationLink(destination: ProfileView(user: user), label: {
+                        NavigationLink(destination: ProfileView(otherUser: user), label: {
                             HStack(alignment: .top) {
                                 if let imageFound = user.image.first {
                                     AsyncImagePhases(unwrappedImageURL: imageFound.url, widthFrame: 100, heightFrame: 100)

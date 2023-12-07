@@ -29,6 +29,7 @@
 		3CA605B82AEBE78700DF48DD /* DrinkAPIRequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA605B72AEBE78700DF48DD /* DrinkAPIRequestViewModel.swift */; };
 		3CA605BA2AEBEB7A00DF48DD /* DrinkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA605B92AEBEB7A00DF48DD /* DrinkListView.swift */; };
 		3CB78ABE2B2087B800C82764 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB78ABD2B2087B800C82764 /* UserViewModel.swift */; };
+		3CB78AC32B21D3B600C82764 /* UserSessionProfilCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB78AC22B21D3B600C82764 /* UserSessionProfilCoreData.swift */; };
 		3CFF02672AE96E92006ADD77 /* local.env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFF02662AE96E92006ADD77 /* local.env.swift */; };
 		3CFF02752AE96F3A006ADD77 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFF02742AE96F3A006ADD77 /* RootView.swift */; };
 		5274EEBB2AE7EA36001C86E5 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274EEBA2AE7EA36001C86E5 /* LocationManager.swift */; };
@@ -64,6 +65,7 @@
 		3CA605B72AEBE78700DF48DD /* DrinkAPIRequestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkAPIRequestViewModel.swift; sourceTree = "<group>"; };
 		3CA605B92AEBEB7A00DF48DD /* DrinkListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkListView.swift; sourceTree = "<group>"; };
 		3CB78ABD2B2087B800C82764 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		3CB78AC22B21D3B600C82764 /* UserSessionProfilCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionProfilCoreData.swift; sourceTree = "<group>"; };
 		3CFF02662AE96E92006ADD77 /* local.env.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = local.env.swift; sourceTree = "<group>"; };
 		3CFF02742AE96F3A006ADD77 /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootView.swift; path = ../Views/RootView.swift; sourceTree = "<group>"; };
 		5274EEBA2AE7EA36001C86E5 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -102,7 +104,7 @@
 		3C07C4D32AF406F200AFFFC8 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				3C07C4D42AF4075C00AFFFC8 /* ProfileViewCoreData.swift */,
+				3CB78AC12B21D37300C82764 /* ProfilCoreData */,
 				3C07C4D62AF407B200AFFFC8 /* DrinkListViewCoreData.swift */,
 			);
 			name = CoreData;
@@ -190,6 +192,15 @@
 				3C954E952AE9787F009EE498 /* UserAPIRequestViewModel.swift */,
 			);
 			path = APIRequestUsers;
+			sourceTree = "<group>";
+		};
+		3CB78AC12B21D37300C82764 /* ProfilCoreData */ = {
+			isa = PBXGroup;
+			children = (
+				3C07C4D42AF4075C00AFFFC8 /* ProfileViewCoreData.swift */,
+				3CB78AC22B21D3B600C82764 /* UserSessionProfilCoreData.swift */,
+			);
+			name = ProfilCoreData;
 			sourceTree = "<group>";
 		};
 		3CFF026E2AE96EFB006ADD77 /* APIAndClass */ = {
@@ -347,6 +358,7 @@
 				3C27FB842AE97718005C865F /* UserListView.swift in Sources */,
 				3C07C4CE2AF4063B00AFFFC8 /* AppDataModel.xcdatamodeld in Sources */,
 				528D11362AEC00D9000B772F /* ConfettiView.swift in Sources */,
+				3CB78AC32B21D3B600C82764 /* UserSessionProfilCoreData.swift in Sources */,
 				3CB78ABE2B2087B800C82764 /* UserViewModel.swift in Sources */,
 				3C954E962AE9787F009EE498 /* UserAPIRequestViewModel.swift in Sources */,
 				3C740C682B19E6C400307CFD /* AsyncImagePhases.swift in Sources */,

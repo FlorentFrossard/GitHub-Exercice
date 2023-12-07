@@ -9,24 +9,24 @@ import SwiftUI
 
 struct ProfileView: View {
     //ce userSession correspond a l'utilisateur qui utilise son téléphone et/ou qui est enregistré
-    @EnvironmentObject var userSession: User
+    @EnvironmentObject var userSession: UserViewModel
     
     //comme on va afficher des drink il nous faut appeler tous Drink dans cette vue aussi
     @EnvironmentObject var drinkRequest: DrinkAPIRequestViewModel
     
     //et comme on veut utiliser la même vue de profil, au lieu de l'écrire 2 fois on passe en optionnel un User
     //si on a bien 1 autre utilisateur (différent de celui enregistré) alors on affiche cette utilisateur
-    var user: User?
+    var otherUser: User?
     
     var body: some View {
         ZStack {
             //ici on s'assure que le l'autre utilisateur est bien existant (l'optionnel)
             //si oui on rentre dans cette condition et on stock l'utilisateur existant dans unwrappedUser
-            if let unwrappedUser = user {
+            if let unwrappedUser = otherUser {
                 
                 //ensuite on compare l'id de l'autre utilisateur avec l'id de celui connecté
                 //si les id sont différent alors on on rentre dans le if pour afficher les infos du l'utilisateur optionnel
-                if unwrappedUser.id != userSession.id {
+                if unwrappedUser.id != userSession.user.id {
                     VStack {
                         
                         if let imageFound = unwrappedUser.image.first {
@@ -83,7 +83,7 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView(user: User(id: "989zfozrg8723", name: "Zo", status: "Feels cold", notes: "Tea and hot chocolate baby~", image: [DataBaseImage(id: "zigjzprigj", width: 1000, height: 1000, url: "", filename: "day16-retro-cassette", size: 2800, type: "image/jpeg", thumbnails: Thumbnails(small: .init(url: "", width: 0, height: 0), large: .init(url: "", width: 0, height: 0), full: .init(url: "", width: 1000, height: 1000)))], drink: [String](), idFromDrink: [String]()))
+    ProfileView(otherUser: User(id: "989zfozrg8723", name: "Zo", status: "Feels cold", notes: "Tea and hot chocolate baby~", image: [DataBaseImage(id: "zigjzprigj", width: 1000, height: 1000, url: "", filename: "day16-retro-cassette", size: 2800, type: "image/jpeg", thumbnails: Thumbnails(small: .init(url: "", width: 0, height: 0), large: .init(url: "", width: 0, height: 0), full: .init(url: "", width: 1000, height: 1000)))], drink: [String](), idFromDrink: [String]()))
     
     
     

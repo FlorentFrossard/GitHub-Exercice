@@ -36,7 +36,7 @@ struct DrinkListView: View {
 
 struct ExtractedDrinkCard: View {
     @EnvironmentObject var drinkRequest: DrinkAPIRequestViewModel
-    @EnvironmentObject var userSession: User
+    @EnvironmentObject var userSession: UserViewModel
     var id: String
     var body: some View {
         if let index = drinkRequest.allDrink.firstIndex(where:{$0.id == id}) {
@@ -62,18 +62,19 @@ struct ExtractedDrinkCard: View {
                         
                         //l'utilisateur enregistré à un array d'id ou y sont les Drink = Drink.id -> idFromDrink
                         //on compare ça avec le drink.id du ForEach
-                        if let favIndex = userSession.idFromDrink.firstIndex(where: {$0 == id}) {
+//                        if let favIndex = userSession.user.idFromDrink.firstIndex(where: {$0 == id}) {
                             //on retire de ces favoris l'élément qui correspond en fonction de l'index récup a la ligne du dessus
                             //MARK: REMOVE FROM FAV DRINKS FOR API AND CLASS
                             
                             
-                        }
+//                        }
                     } else {
                         //tel élément je te transform en true
                         drinkRequest.allDrink[index].favorite = true
                         
                         //on ajoute dans mon array favoris (idFromDrink) l'id de l'élément sélectionné
                         //MARK: ADD TO FAV DRINKS FOR API AND CLASS
+                        
                     }
               
                 
