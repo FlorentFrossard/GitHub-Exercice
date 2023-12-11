@@ -17,15 +17,14 @@ class UserViewModel: ObservableObject {
     @Published var user = User(id: "989zfozrg8723", name: "Zo", status: "Feels cold man", notes: "Tea and hot chocolate baby~", image: [DataBaseImage(id: "zigjzprigj", width: 1000, height: 1000, url: "", filename: "day16-retro-cassette", size: 2800, type: "image/jpeg", thumbnails: Thumbnails(small: .init(url: "", width: 0, height: 0), large: .init(url: "", width: 0, height: 0), full: .init(url: "", width: 1000, height: 1000)))], drink: [String](), idFromDrink: [String]())
     
 //MARK: FUNCTIONS FOR API AND CLASS NOTIONS
-    func addDrinksToFavorite(chosenDrink drinkRequest: DrinkAPIRequestViewModel, index: Int) {
-        user.idFromDrink.append(drinkRequest.allDrink[index].id)
+    func addDrinksToFavorite(chosenDrink dataController: DataControllerViewModel, index: Int) {
+        user.idFromDrink.append(dataController.allDrinks[index].id)
     }
     
     func removeDrinksFromFavorite(idFromDrink id: String) {
         if let favIndex = user.idFromDrink.firstIndex(where: {$0 == id}) {
             //on retire de ces favoris l'élément qui correspond en fonction de l'index récup a la ligne du dessus
             user.idFromDrink.remove(at: favIndex)
-            
         }
     }
 
@@ -41,7 +40,6 @@ class UserViewModel: ObservableObject {
         newFav.price = dataController.allDrinks[index].price
         newFav.user = user.id
         newFav.image = dataController.allDrinks[index].image[0].url
-        
         //puis on sauvegarde si un changement a eu lieu
         if moc.hasChanges {
             try? moc.save()

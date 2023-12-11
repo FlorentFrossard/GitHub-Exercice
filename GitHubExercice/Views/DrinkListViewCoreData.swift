@@ -52,8 +52,7 @@ struct DrinkListViewCoreData: View {
                                                 dataController.allDrinks[index].favorite = false
                                                 
                                                 //on fait la même chose pour la partie Core Data
-                                                //MARK: AJOUTER LA FONCTION DE REMOVE QUI PROVIENT DU VM
-//
+                                                userSession.removeCoreDataDrinksFromFavorite(drink: dataController.allDrinks[index], fetchedRequest: favoriteDrink, CoreDataContext: moc)
                                                 
                                                 
                                             } else {

@@ -64,8 +64,7 @@ struct ExtractedDrinkCard: View {
                         //on compare ça avec le drink.id du ForEach
 //                        if let favIndex = userSession.user.idFromDrink.firstIndex(where: {$0 == id}) {
                             //on retire de ces favoris l'élément qui correspond en fonction de l'index récup a la ligne du dessus
-                            //MARK: REMOVE FROM FAV DRINKS FOR API AND CLASS
-                            
+                        userSession.removeDrinksFromFavorite(idFromDrink: dataController.allDrinks[index].id)
                             
 //                        }
                     } else {
@@ -73,12 +72,8 @@ struct ExtractedDrinkCard: View {
                         dataController.allDrinks[index].favorite = true
                         
                         //on ajoute dans mon array favoris (idFromDrink) l'id de l'élément sélectionné
-                        //MARK: ADD TO FAV DRINKS FOR API AND CLASS
-                        
+                        userSession.addDrinksToFavorite(chosenDrink: dataController, index: index)
                     }
-              
-                
-                
             } label: {
                 Image(systemName: dataController.allDrinks[index].favorite == true ? "star.fill" : "star")
             }
