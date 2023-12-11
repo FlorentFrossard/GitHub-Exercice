@@ -10,13 +10,13 @@ import SwiftUI
 struct UserListView: View {
     
     //ici on lit la variable observer dans les vues enfants via le @EnvironmentObjet pour pouvoir voir les changements
-    @EnvironmentObject var userRequest: UserAPIRequestViewModel
+    @EnvironmentObject var dataController: DataControllerViewModel
     
     var body: some View {
         NavigationStack {
             ScrollView {
                 LazyVStack(alignment: .leading) {
-                    ForEach(userRequest.allUser) { user in
+                    ForEach(dataController.allUsers) { user in
                         NavigationLink(destination: ProfileView(otherUser: user), label: {
                             HStack(alignment: .top) {
                                 if let imageFound = user.image.first {
@@ -43,7 +43,7 @@ struct UserListView: View {
 
 #Preview {
     UserListView()
-        .environmentObject(DrinkAPIRequestViewModel())
-        .environmentObject(UserAPIRequestViewModel())
+//        .environmentObject(DrinkAPIRequestViewModel())
+//        .environmentObject(UserAPIRequestViewModel())
     
 }

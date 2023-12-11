@@ -9,7 +9,7 @@ import SwiftUI
 
 struct UserSessionProfil: View {
     @EnvironmentObject var userSession: UserViewModel
-    @EnvironmentObject var drinkRequest: DrinkAPIRequestViewModel
+    @EnvironmentObject var dataController: DataControllerViewModel
     
     var body: some View {
         NavigationStack {
@@ -37,7 +37,7 @@ struct UserSessionProfil: View {
                         Text("Vous n'avez rien ajouté dans votre liste de favoris")
                     } else {
                         ScrollView {
-                            ForEach(drinkRequest.allDrink) { drink in
+                            ForEach(dataController.allDrinks) { drink in
                                 ForEach(userSession.user.idFromDrink, id: \.self) { id in
                                     
                                     if drink.id == id {

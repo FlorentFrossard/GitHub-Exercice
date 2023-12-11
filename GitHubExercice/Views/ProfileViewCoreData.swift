@@ -12,7 +12,7 @@ struct ProfileViewCoreData: View {
     @EnvironmentObject var userSession: UserViewModel
     
     //comme on va afficher des drink il nous faut appeler tous Drink dans cette vue aussi
-    @EnvironmentObject var drinkRequest: DrinkAPIRequestViewModel
+    @EnvironmentObject var dataController: DataControllerViewModel
     
     
     //et comme on veut utiliser la même vue de profil, au lieu de l'écrire 2 fois on passe en optionnel un User
@@ -62,7 +62,7 @@ struct ProfileViewCoreData: View {
                                 //pour cela on a besoin du tableau idFromDrink provenant de notre User
                                 //et de toute la donnée provenant du pull API, ici drinkRequest.allDrink
                                 ScrollView {
-                                    ForEach(drinkRequest.allDrink) { drink in
+                                    ForEach(dataController.allDrinks) { drink in
                                         ForEach(unwrappedUser.idFromDrink, id: \.self) { id in
                                             
                                             HStack {

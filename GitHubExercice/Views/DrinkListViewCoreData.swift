@@ -11,7 +11,7 @@ struct DrinkListViewCoreData: View {
     
     //ici on a au moins besoin du pull API des Drinks
     //mais aussi de l'utilisateur renseigné car seul lui peut mettre en favoris ces éléments
-    @EnvironmentObject var drinkRequest: DrinkAPIRequestViewModel
+    @EnvironmentObject var dataController: DataControllerViewModel
     @EnvironmentObject var userSession: UserViewModel
     
 //    //CORE DATA
@@ -23,7 +23,7 @@ struct DrinkListViewCoreData: View {
         NavigationStack {
             ScrollView {
                 LazyVStack(alignment: .leading) {
-                    ForEach(drinkRequest.allDrink) { drink in
+                    ForEach(dataController.allDrinks) { drink in
                         NavigationLink(destination: DrinkDetailView(id: drink.id), label: {
                             
                                 
@@ -33,11 +33,11 @@ struct DrinkListViewCoreData: View {
                                        
                                     }
                                 
-                                if let index = drinkRequest.allDrink.firstIndex(where:{$0.id == drink.id}) {
+                                if let index = dataController.allDrinks.firstIndex(where:{$0.id == drink.id}) {
                                     
                                     VStack(alignment: .leading) {
                                         Text(drink.name)
-                                        Text(drinkRequest.formatPrice(index: index))
+                                        Text(dataController.formatPrice(index: index))
                                     }
                                     
                                     Spacer()
@@ -48,8 +48,8 @@ struct DrinkListViewCoreData: View {
                                         //si les drinks correspondent on stock l'index (firstIndex)
                                         
                                             //si la valeur favorite == true
-                                            if drinkRequest.allDrink[index].favorite == true {
-                                                drinkRequest.allDrink[index].favorite = false
+                                            if dataController.allDrinks[index].favorite == true {
+                                                dataController.allDrinks[index].favorite = false
                                                 
                                                 //on fait la même chose pour la partie Core Data
                                                 //MARK: AJOUTER LA FONCTION DE REMOVE QUI PROVIENT DU VM
@@ -58,9 +58,9 @@ struct DrinkListViewCoreData: View {
                                                 
                                             } else {
                                                 //tel élément je te transform en true
-                                                drinkRequest.allDrink[index].favorite = true
+                                                dataController.allDrinks[index].favorite = true
                                                 
-                                                userSession.addCoreDataDrinksToFavorite(chosenDrink: drinkRequest, index: index, CoreDataContext: moc)
+                                                userSession.addCoreDataDrinksToFavorite(chosenDrink: dataController, index: index, CoreDataContext: moc)
                                             }
                                       
                                     } label: {

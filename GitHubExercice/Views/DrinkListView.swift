@@ -11,14 +11,14 @@ struct DrinkListView: View {
     
     //ici on a au moins besoin du pull API des Drinks
     //mais aussi de l'utilisateur renseigné car seul lui peut mettre en favoris ces éléments
-    @EnvironmentObject var drinkRequest: DrinkAPIRequestViewModel
+    @EnvironmentObject var dataController: DataControllerViewModel
     @EnvironmentObject var userSession: User
     
     var body: some View {
         NavigationStack {
             ScrollView {
                 LazyVStack(alignment: .leading) {
-                    ForEach(drinkRequest.allDrink) { drink in
+                    ForEach(dataController.allDrinks) { drink in
                         ExtractedDrinkCard(id: drink.id)
                     }
                 }
@@ -35,17 +35,17 @@ struct DrinkListView: View {
 }
 
 struct ExtractedDrinkCard: View {
-    @EnvironmentObject var drinkRequest: DrinkAPIRequestViewModel
+    @EnvironmentObject var dataController: DataControllerViewModel
     @EnvironmentObject var userSession: UserViewModel
     var id: String
     var body: some View {
-        if let index = drinkRequest.allDrink.firstIndex(where:{$0.id == id}) {
+        if let index = dataController.allDrinks.firstIndex(where:{$0.id == id}) {
         HStack(alignment: .top) {
-            if let imageFound = drinkRequest.allDrink[index].image.first {
+            if let imageFound = dataController.allDrinks[index].image.first {
                 AsyncImagePhases(unwrappedImageURL: imageFound.url, widthFrame: 100, heightFrame: 100)
             }
             
-            Text(drinkRequest.allDrink[index].name)
+            Text(dataController.allDrinks[index].name)
          
             Button {
                 //$0.id -> n'importe quel élément de l'array allDrink
@@ -55,10 +55,10 @@ struct ExtractedDrinkCard: View {
                
                     
                     //si la valeur favorite == true
-                    if drinkRequest.allDrink[index].favorite == true {
+                    if dataController.allDrinks[index].favorite == true {
                         
                         //transforme la valeur en false parce qu'on appuis sur le même button, donc on retire de nos favoris cette élément
-                        drinkRequest.allDrink[index].favorite = false
+                        dataController.allDrinks[index].favorite = false
                         
                         //l'utilisateur enregistré à un array d'id ou y sont les Drink = Drink.id -> idFromDrink
                         //on compare ça avec le drink.id du ForEach
@@ -70,7 +70,7 @@ struct ExtractedDrinkCard: View {
 //                        }
                     } else {
                         //tel élément je te transform en true
-                        drinkRequest.allDrink[index].favorite = true
+                        dataController.allDrinks[index].favorite = true
                         
                         //on ajoute dans mon array favoris (idFromDrink) l'id de l'élément sélectionné
                         //MARK: ADD TO FAV DRINKS FOR API AND CLASS
@@ -80,7 +80,7 @@ struct ExtractedDrinkCard: View {
                 
                 
             } label: {
-                Image(systemName: drinkRequest.allDrink[index].favorite == true ? "star.fill" : "star")
+                Image(systemName: dataController.allDrinks[index].favorite == true ? "star.fill" : "star")
             }
            
             

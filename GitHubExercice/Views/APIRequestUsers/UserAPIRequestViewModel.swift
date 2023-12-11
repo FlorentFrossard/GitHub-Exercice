@@ -12,15 +12,15 @@ import Foundation
 //on fait une classe parce que elle seule peuvent être appliquée sur toute l'application!
 //avec le ObservableObject on indique qu'on va lire la même info partout
 //
-class UserAPIRequestViewModel: ObservableObject {
+class UserAPIRequestViewModel {
     
     //on veut savoir les faits et gestes des @Published tel un stalker
-    @Published var allUser = [User]()
+//    @Published var allUser = [User]()
     
     //on prépare une fonction asynchrone pour ne pas surcharger le main thread
     //cette méthode va être utiliser sur un autre thread secondaire
     //et on veut pouvoir utiliser de la donnée de type User donc on attend un array de ça en retour
-    func fetchedUser() async -> [User] {
+    func fetchedUsers() async -> [User] {
         var resultUser = [User]()
         
         //1er préparation -> est-ce-que mon url est le bon
@@ -39,7 +39,7 @@ class UserAPIRequestViewModel: ObservableObject {
         request.httpMethod = "GET" // -> ma demande
         
         request.setValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization") // -> qui je suis
-         
+        
         
         //fait une suite d'actions, si elles ne sont pas possibles dans ce cas -> catch
         //le catch récup une erreur en fonction du résultat négatif de l'action

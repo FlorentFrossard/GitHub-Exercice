@@ -33,14 +33,14 @@ class UserViewModel: ObservableObject {
     
     //lorsqu'on appuis sur l'étoile on ajoute un objet Favorite dans notre context
     //on renseigne les infos dont on a besoin
-    func addCoreDataDrinksToFavorite(chosenDrink drinkRequest: DrinkAPIRequestViewModel, index: Int, CoreDataContext moc: NSManagedObjectContext) {
+    func addCoreDataDrinksToFavorite(chosenDrink dataController: DataControllerViewModel, index: Int, CoreDataContext moc: NSManagedObjectContext) {
         let newFav = Favorite(context: moc)
-        newFav.name = drinkRequest.allDrink[index].name
-        newFav.favorite = drinkRequest.allDrink[index].favorite!
-        newFav.id = drinkRequest.allDrink[index].id
-        newFav.price = drinkRequest.allDrink[index].price
+        newFav.name = dataController.allDrinks[index].name
+        newFav.favorite = dataController.allDrinks[index].favorite!
+        newFav.id = dataController.allDrinks[index].id
+        newFav.price = dataController.allDrinks[index].price
         newFav.user = user.id
-        newFav.image = drinkRequest.allDrink[index].image[0].url
+        newFav.image = dataController.allDrinks[index].image[0].url
         
         //puis on sauvegarde si un changement a eu lieu
         if moc.hasChanges {

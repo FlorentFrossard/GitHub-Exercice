@@ -9,7 +9,7 @@ import SwiftUI
 
 struct UserSessionProfilCoreData: View {
     @EnvironmentObject var userSession: UserViewModel
-    @EnvironmentObject var drinkRequest: DrinkAPIRequestViewModel
+    @EnvironmentObject var dataController: DataControllerViewModel
     
     //CORE DATA
         @FetchRequest(sortDescriptors: []) var favoriteDrink: FetchedResults<Favorite>
@@ -59,28 +59,16 @@ struct UserSessionProfilCoreData: View {
                                         //en résultat on récup un index
                                         if let favIndex = favoriteDrink.firstIndex(where: { $0.id == favDrink.id }) {
                                             
-                                            if let index = drinkRequest.allDrink.firstIndex(where: { $0.id == favDrink.id }) {
-                                                drinkRequest.allDrink[index].favorite = false
+                                            if let index = dataController.allDrinks.firstIndex(where: { $0.id == favDrink.id }) {
+                                                dataController.allDrinks[index].favorite = false
                                                 //pointer l'élément dont sa valeur changé a false pour la supprimer
                                                 favoriteDrink[favIndex].favorite = false
                                                 //appel de la fonction qui retire les drinks des favoris
-                                                userSession.removeCoreDataDrinksFromFavorite(drink: drinkRequest.allDrink[index], fetchedRequest: favoriteDrink, CoreDataContext: moc)
+                                                userSession.removeCoreDataDrinksFromFavorite(drink: dataController.allDrinks[index], fetchedRequest: favoriteDrink, CoreDataContext: moc)
                                             }
                                             
                                         }
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                           
-                                            
-                                            
-
-                                            
-                                            
-                                        
+                                              
                                     } label: {
                                         Image(systemName: "star.fill")
                                     }
